@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "dishes#index"
   # Routes for the Very_best_dishes_bookmark resource:
   # CREATE
