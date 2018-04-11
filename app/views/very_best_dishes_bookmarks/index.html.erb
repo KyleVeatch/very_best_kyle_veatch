@@ -17,9 +17,27 @@
 
       <% @very_best_dishes_bookmarks.each do |very_best_dishes_bookmark| %>
       <tr>
-        <td><%= very_best_dishes_bookmark.dish.name %></td>
-        <td><%= very_best_dishes_bookmark.cuisine.name %></td>
-        <td><%= very_best_dishes_bookmark.restaurant.name %></td>
+        <td>
+          <% if very_best_dishes_bookmark.dish.present? %>
+            <a href="/dishes/<%= very_best_dishes_bookmark.dish.id %>">
+              <%= very_best_dishes_bookmark.dish.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if very_best_dishes_bookmark.cuisine.present? %>
+            <a href="/cuisines/<%= very_best_dishes_bookmark.cuisine.id %>">
+              <%= very_best_dishes_bookmark.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if very_best_dishes_bookmark.restaurant.present? %>
+            <a href="/restaurants/<%= very_best_dishes_bookmark.restaurant.id %>">
+              <%= very_best_dishes_bookmark.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/very_best_dishes_bookmarks/<%= very_best_dishes_bookmark.id %>" class="btn btn-primary">Show</a>
           <a href="/very_best_dishes_bookmarks/<%= very_best_dishes_bookmark.id %>/edit" class="btn btn-warning">Edit</a>
