@@ -23,3 +23,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Cuisine has many restaurants -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurants
+      </li>
+
+      <% @cuisine.restaurants.each do |restaurant| %>
+        <li class="list-group-item">
+          <a href="/restaurants/<%= restaurant.id %>">
+            <%= restaurant.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/restaurants/<%= restaurant.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_restaurant/<%= restaurant.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Cuisine has many dishes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Dishes
+      </li>
+
+      <% @cuisine.dishes.each do |dish| %>
+        <li class="list-group-item">
+          <a href="/dishes/<%= dish.id %>">
+            <%= dish.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/dishes/<%= dish.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_dish/<%= dish.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Cuisine has many very_best_dishes_bookmarks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Very Best Dishes Bookmarks
+      </li>
+
+      <% @cuisine.very_best_dishes_bookmarks.each do |very_best_dishes_bookmark| %>
+        <li class="list-group-item">
+          <a href="/very_best_dishes_bookmarks/<%= very_best_dishes_bookmark.id %>">
+            <%= very_best_dishes_bookmark.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/very_best_dishes_bookmarks/<%= very_best_dishes_bookmark.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/very_best_dishes_bookmarks/<%= very_best_dishes_bookmark.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_very_best_dishes_bookmark/<%= very_best_dishes_bookmark.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Cuisine has many neighborhoods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Neighborhoods
+      </li>
+
+      <% @cuisine.neighborhoods.each do |neighborhood| %>
+        <li class="list-group-item">
+          <a href="/neighborhoods/<%= neighborhood.id %>">
+            <%= neighborhood.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/neighborhoods/<%= neighborhood.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/neighborhoods/<%= neighborhood.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_neighborhood/<%= neighborhood.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
