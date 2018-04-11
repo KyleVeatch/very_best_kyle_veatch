@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Very_best_dishes_bookmark resource:
+  # CREATE
+  get "/very_best_dishes_bookmarks/new", :controller => "very_best_dishes_bookmarks", :action => "new"
+  post "/create_very_best_dishes_bookmark", :controller => "very_best_dishes_bookmarks", :action => "create"
+
+  # READ
+  get "/very_best_dishes_bookmarks", :controller => "very_best_dishes_bookmarks", :action => "index"
+  get "/very_best_dishes_bookmarks/:id", :controller => "very_best_dishes_bookmarks", :action => "show"
+
+  # UPDATE
+  get "/very_best_dishes_bookmarks/:id/edit", :controller => "very_best_dishes_bookmarks", :action => "edit"
+  post "/update_very_best_dishes_bookmark/:id", :controller => "very_best_dishes_bookmarks", :action => "update"
+
+  # DELETE
+  get "/delete_very_best_dishes_bookmark/:id", :controller => "very_best_dishes_bookmarks", :action => "destroy"
+  #------------------------------
+
   # Routes for the Cuisine resource:
   # CREATE
   get "/cuisines/new", :controller => "cuisines", :action => "new"
