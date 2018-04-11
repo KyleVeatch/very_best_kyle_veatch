@@ -1,6 +1,7 @@
 class VeryBestDishesBookmarksController < ApplicationController
   def index
-    @very_best_dishes_bookmarks = VeryBestDishesBookmark.page(params[:page]).per(10)
+    @q = VeryBestDishesBookmark.ransack(params[:q])
+    @very_best_dishes_bookmarks = @q.result(:distinct => true).includes(:dish, :restaurant, :cuisine).page(params[:page]).per(10)
 
     render("very_best_dishes_bookmarks/index.html.erb")
   end
