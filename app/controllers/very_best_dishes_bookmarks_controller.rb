@@ -1,6 +1,6 @@
 class VeryBestDishesBookmarksController < ApplicationController
   def index
-    @very_best_dishes_bookmarks = VeryBestDishesBookmark.all
+    @very_best_dishes_bookmarks = VeryBestDishesBookmark.page(params[:page]).per(10)
 
     render("very_best_dishes_bookmarks/index.html.erb")
   end
