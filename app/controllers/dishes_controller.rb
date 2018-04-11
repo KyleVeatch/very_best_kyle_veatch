@@ -6,6 +6,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @very_best_dishes_bookmark = VeryBestDishesBookmark.new
     @dish = Dish.find(params[:id])
 
     render("dishes/show.html.erb")
